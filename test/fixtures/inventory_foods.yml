@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  food: one
+  inventory: one
+  quantity_unit: MyString
+
+two:
+  quantity: 1
+  food: two
+  inventory: two
+  quantity_unit: MyString
