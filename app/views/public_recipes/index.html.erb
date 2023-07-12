@@ -1,0 +1,18 @@
+<section>
+  <% @public_recipes.each do |recipe| %>
+    <div class="container">
+      <div class='row border border-2 rounded-2 p-2 align-items-center mb-3'>
+        <div class="col">
+          <span class="d-block fs-2 fw-bold">
+            <%= link_to recipe.name, recipe, class: "nav-link" %>
+          </span>
+          <span>By: <%= recipe.user.name %></span>
+        </div>
+        <div class="col">
+          <span class="d-block">Total food items: <%= recipe.foods.count %></span>
+          <span>Total price: <%= recipe.foods.sum {|public_food| public_food.price } %></span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
