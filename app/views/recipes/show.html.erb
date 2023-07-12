@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<p class="text-success"><%= notice %></p>
 
-<%= render @recipe %>
+<div class="card">
+  <div class="card-body">
+    <%= render @recipe %>
+  </div>
+</div>
 
-<div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+<div class="mt-4">
+  
+  <%= link_to "Back to recipes", recipes_path, class: "btn btn-secondary mr-2" %>
+  <%= button_to "Destroy this recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 </div>

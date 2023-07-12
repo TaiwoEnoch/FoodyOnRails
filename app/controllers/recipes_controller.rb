@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /recipes or /recipes.json
   def index
@@ -22,7 +23,8 @@ class RecipesController < ApplicationController
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
-
+    @recipe.user = current_user  # Assign current user to recipe's user association
+  
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully created." }
@@ -33,6 +35,7 @@ class RecipesController < ApplicationController
       end
     end
   end
+  
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
