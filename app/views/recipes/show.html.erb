@@ -1,22 +1,24 @@
 <p class="text-success"><%= notice %></p>
 
-<div class="card">
-  <div class="card-body">
-    <h4>Name: <%= @recipe.name %></h4>
-    <p>Preparation time: <%= @recipe.preparation_time %></p>
-    <p>Cooking time: <%= @recipe.cooking_time %></p>
-    <p>Description: <%= @recipe.description %></p>
-    <p>
-      Public:
-      <div class="form-check form-switch">
-        <%= check_box_tag 'recipe[public]', 1, @recipe.public, class: 'form-check-input', id: 'toggle-btn' %>
-        <label class="form-check-label" for="toggle-btn"></label>
+<h1 class="text-center m-4">Name: <%= @recipe.name %></h1>
+<div class="card border border-secondary">
+  <div class="card-body d-flex justify-content-between ">
+    <div>
+      <p class="fs-3">Preparation time: <%= @recipe.preparation_time %></p>
+      <p class="fs-3">Cooking time: <%= @recipe.cooking_time %></p>
+      <p class="fs-3"> Description: <%= @recipe.description %></p>
+    </div>
+    <div class="form-check form-switch">
+      <div class="d-flex align-items-center">
+        <label class="form-check-label me-3 fs-3" for="toggle-btn">Public:</label>
+        <%= check_box_tag 'recipe[public]', 1, @recipe.public, class: 'form-check-input fs-3 ms-1', id: 'toggle-btn' %>
       </div>
-    </p>
+    </div>
   </div>
 </div>
 
-<div class="mt-4">
-  <%= link_to "Back to recipes", recipes_path, class: "btn btn-secondary mr-2" %>
-  <%= button_to "Destroy this recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+
+<div class="d-flex mt-4">
+  <%= link_to "Back to recipes", recipes_path, class: "btn btn-secondary mx-2" %>
+  <%= button_to "Destroy this recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger mx-2" %>
 </div>
