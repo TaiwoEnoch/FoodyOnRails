@@ -71,3 +71,5 @@ group :test do
   gem "webdrivers"
   gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
 end
+
+gem 'cancancan'
