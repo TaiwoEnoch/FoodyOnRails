@@ -16,7 +16,6 @@ RSpec.describe 'Recipe', type: :model do
     )
   end
 
-
   it 'Recipe model field should be equal to test recipe' do
     expect(@recipe.name).to eq 'Recipe 1'
     expect(@recipe.preparation_time).to eq 1
