@@ -33,4 +33,3 @@ class InventoryFoodsController < ApplicationController
     params.require(:inventory_food).permit(:food_id, :quantity, :quantity_unit)
   end
 end
-

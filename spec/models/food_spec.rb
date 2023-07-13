@@ -11,7 +11,7 @@ RSpec.describe Food, type: :model do
   it 'should contain the measurement' do
     expect(@food.measurement_unit.to_i).to eq 3
   end
-  
+
   it 'should container the price ' do
     expect(@food.price).to eq 1
   end

@@ -20,7 +20,6 @@ class InventoriesController < ApplicationController
       render :new
     end
   end
-  
 
   def destroy
     @inventory = Inventory.find(params[:id])

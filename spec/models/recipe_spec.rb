@@ -4,7 +4,7 @@ RSpec.describe 'Recipe', type: :model do
     @user = User.create(
       name: 'Test',
       email: 'test@example.com',
-      password: 'password',
+      password: 'password'
     )
     @recipe = Recipe.create(
       user: @user,
@@ -15,7 +15,7 @@ RSpec.describe 'Recipe', type: :model do
       public: true
     )
   end
-  
+
 
   it 'Recipe model field should be equal to test recipe' do
     expect(@recipe.name).to eq 'Recipe 1'
@@ -23,5 +23,4 @@ RSpec.describe 'Recipe', type: :model do
     expect(@recipe.cooking_time).to eq 2
     expect(@recipe.description).to eq 'test test'
   end
-  
 end
