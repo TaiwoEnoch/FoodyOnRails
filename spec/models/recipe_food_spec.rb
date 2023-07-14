@@ -1,17 +1,42 @@
+# spec/models/recipe_food_spec.rb
 require 'rails_helper'
 
-RSpec.describe 'Recipe', type: :model do
-  before :each do
-    @user = User.create(name: 'Test', email: 'test@example.com', password: 'password')
-    @recipe = Recipe.create(user: @user, name: 'test recipe', preparation_time: 1, cooking_time: 1,
-                            description: 'test test', public: true)
-    @test_food = Food.create(name: 'test food', measurement_unit: 2, price: 10, unit_quantity: 'kgs')
-    @recipe_food = RecipeFood.create(quantity: 10, food_name: 'test food', recipe: @recipe)
+RSpec.describe RecipeFood, type: :model do
+  describe 'associations' do
+    it 'belongs to recipe' do
+      association = described_class.reflect_on_association(:recipe)
+      expect(association.macro).to eq(:belongs_to)
+    end
+
+    it 'belongs to food' do
+      association = described_class.reflect_on_association(:food)
+      expect(association.macro).to eq(:belongs_to)
+    end
   end
 
-  it 'RecipeFood model field should be equal to test recipe_food' do
-    expect(@recipe_food.quantity).to eq 10
-    expect(@recipe_food.food).to eq @test_food
-    expect(@recipe_food.recipe).to eq @recipe
+  describe 'validations' do
+    it 'validates presence of quantity' do
+      recipe_food = RecipeFood.new(quantity: nil)
+      expect(recipe_food.valid?).to be_falsey
+      expect(recipe_food.errors[:quantity]).to include("can't be blank")
+    end
+
+    it 'validates numericality of quantity' do
+      recipe_food = RecipeFood.new(quantity: -1)
+      expect(recipe_food.valid?).to be_falsey
+      expect(recipe_food.errors[:quantity]).to include('must be greater than or equal to 0')
+    end
+
+    it 'validates presence of recipe_id' do
+      recipe_food = RecipeFood.new(recipe_id: nil)
+      expect(recipe_food.valid?).to be_falsey
+      expect(recipe_food.errors[:recipe_id]).to include("can't be blank")
+    end
+
+    it 'validates presence of food_name' do
+      recipe_food = RecipeFood.new(food_name: nil)
+      expect(recipe_food.valid?).to be_falsey
+      expect(recipe_food.errors[:food_name]).to include("can't be blank")
+    end
   end
 end

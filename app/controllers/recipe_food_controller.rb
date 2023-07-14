@@ -5,7 +5,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.includes(:recipe_foods, :foods).find(params[:recipe_id])
+    @recipe_food = @recipe.recipe_foods.build(food: food, quantity: recipe_food_params[:quantity])
     food = @recipe.foods.find_or_create_by(name: recipe_food_params[:food_name])
 
     if food.persisted?

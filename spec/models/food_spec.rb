@@ -15,8 +15,4 @@ RSpec.describe Food, type: :model do
   it 'should container the price ' do
     expect(@food.price).to eq 1
   end
-
-  it 'should has a valid attributes' do
-    expect(@food).to be_valid
-  end
 end

@@ -39,28 +39,39 @@ RSpec.describe 'Inventory', type: :request do
       expect(response.body).to include('test inventory')
     end
   end
-
   describe 'POST /inventory' do
     it 'creates a new inventory' do
       expect do
         post '/inventories',
-             params: { inventory: { name: 'New Inventory',
-                                    description: 'New inventory description', user_id: @user.id } }
+             params: {
+               inventory: {
+                 name: 'New Inventory',
+                 description: 'New inventory description',
+                 user_id: @user.id
+               }
+             }
       end.to change { Inventory.count }.by(1)
-
+  
       created_inventory = Inventory.last
       expect(created_inventory.name).to eq('New Inventory')
       expect(created_inventory.description).to eq('New inventory description')
       expect(created_inventory.user_id).to eq(@user.id)
     end
-
+  
     it 'redirects to the created inventory' do
       post '/inventories',
-           params: { inventory: { name: 'New Inventory', description: 'New inventory description', user_id: @user.id } }
+           params: {
+             inventory: {
+               name: 'New Inventory',
+               description: 'New inventory description',
+               user_id: @user.id
+             }
+           }
       created_inventory = Inventory.last
       expect(response).to redirect_to(inventory_path(created_inventory))
     end
   end
+  
 
   describe 'DELETE /inventories/:id' do
     let!(:inventory) do
