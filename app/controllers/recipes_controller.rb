@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes(:user).all
   end
 
   # GET /recipes/1 or /recipes/1.json
@@ -21,8 +21,8 @@ class RecipesController < ApplicationController
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.user = current_user # Assign current user to recipe's user association
-
+    @recipe.user = current_user
+  
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
     respond_to do |format|
-      if @recipe.update(recipe_params)
+      if @recipe.update(recipe_params.merge(user: current_user))
         format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipe }
       else
