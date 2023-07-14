@@ -5,7 +5,6 @@ class RecipeFood < ApplicationRecord
   attr_accessor :food_name # Define virtual attribute
 
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validates :value, presence: true
   validates :recipe_id, presence: true
   validates :food_name, presence: true # Add validation for food_name
 
