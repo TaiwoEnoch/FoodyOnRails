@@ -8,8 +8,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: danieltaiwo
-  password: password
+  username: postgres
+  password: Aryan10157
   host: localhost
 
 development:
