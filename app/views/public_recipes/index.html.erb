@@ -1,17 +1,19 @@
 <section class="publicPage">
-<h1>Public Recipes</h1>
-<ul class="recipes">
-  <% @recipes.each do |recipe| %>
-  <div class="recipe">
-  <div>
-    <li class="recipe-name"><%= link_to recipe.name, recipe_path(recipe) %></li>
-        <p>By: <%= recipe.user&.name %></p>
-      </div>
+  <h1>Public Recipes</h1>
+  <ul class="list-group recipes">
+    <% @recipes.each do |recipe| %>
+      <li class="list-group-item recipe">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h3 class="recipe-name"><%= link_to recipe.name, recipe_path(recipe) %></h3>
+            <p>By: <%= recipe.user&.name %></p>
+          </div>
           <div>
             <p>Total food items: <%= @recipe_ingredients.where(recipe: recipe).count %></p>
-            <p>Total Price: $ <%= @recipe_ingredients.where(recipe: recipe).map {|value| value.food.price * value.quantity}.sum %></p>
+            <p>Total Price: $<%= @recipe_ingredients.where(recipe: recipe).sum { |value| value.food.price * value.quantity } %></p>
           </div>
-          </div>
-  <% end %>
-</ul>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </section>
