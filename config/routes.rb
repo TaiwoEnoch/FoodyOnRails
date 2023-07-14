@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get 'home/index'
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :recipes, only: %i[index show new create destroy] do
+  resources :recipes, only: %i[index show new create destroy update] do
     member do
       post 'toggle_public'
       get 'shopping_list'
