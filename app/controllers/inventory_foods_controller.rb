@@ -1,26 +1,25 @@
 class InventoryFoodsController < ApplicationController
-  before_action :set_inventory
+  before_action :set_inventory, only: %i[new create]
 
   def new
     @inventory_food = @inventory.inventory_foods.build
-    @foods = Food.all
+    @foods = Food.all # assuming you have a Food model
   end
 
   def create
-    @inventory_food = @inventory.inventory_foods.build(inventory_food_params)
-
+    @inventory_food = @inventory.inventory_foods.create(inventory_food_params)
     if @inventory_food.save
-      redirect_to inventory_path(@inventory), notice: 'Food linked to inventory successfully!'
+      redirect_to @inventory
     else
       @foods = Food.all
-      render :new
+      render 'new'
     end
   end
 
   def destroy
-    @inventory_food = @inventory.inventory_foods.find(params[:id])
+    @inventory_food = InventoryFood.find(params[:id])
     @inventory_food.destroy
-    redirect_to inventory_path(@inventory), notice: 'Inventory food deleted successfully!'
+    redirect_to inventory_path(@inventory_food.inventory), notice: 'Food was successfully removed from the inventory.'
   end
 
   private
@@ -30,6 +29,6 @@ class InventoryFoodsController < ApplicationController
   end
 
   def inventory_food_params
-    params.require(:inventory_food).permit(:food_id, :quantity, :quantity_unit)
+    params.require(:inventory_food).permit(:food_id, :quantity)
   end
 end
