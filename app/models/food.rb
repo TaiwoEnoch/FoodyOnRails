@@ -1,12 +1,11 @@
 class Food < ApplicationRecord
-  has_many :inventory_foods
-  has_many :inventories, through: :inventory_foods
   belongs_to :user
   has_many :recipe_foods, dependent: :destroy
-  has_many :recipes, through: :recipe_foods
+  has_many :recipes, through: :recipe_foods, source: :recipe
+  has_many :inventory_foods
 
-  validates :name, presence: true
-  validates :measurement_unit, presence: true
-  validates :price, presence: true
-  validates :unit_quantity, presence: true
+  attribute :measurement_unit, :string
+  attribute :price, :decimal, precision: 8, scale: 2
+
+  validates :name, presence: true, length: { maximum: 50 }
 end

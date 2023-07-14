@@ -20,7 +20,7 @@ body {
 
 /* START HERE NEW CSS */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 
 * {
   margin: 0;
@@ -29,7 +29,7 @@ body {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 h2 {
@@ -310,7 +310,7 @@ tr:nth-child(even) {
 }
 
 .toggle-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 2px;
   left: 2px;
@@ -424,7 +424,6 @@ tr:nth-child(even) {
 .back:hover {
   background-color: #0069d9;
 }
-
 
 /* ENDS HERE NEW CSS */
 
