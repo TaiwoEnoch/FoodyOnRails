@@ -9,7 +9,7 @@ body {
 
   --color-primary: #398404;
 
-  /* #fe3333; */
+  /* #FE3333; */
   --color-primary-light: #201717;
   --color-text-orange: #201717;
   --color-text-red: #c00;
@@ -301,12 +301,6 @@ body {
   margin-top: 10px;
 }
 
-.publicPage {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 @media screen and (max-width: 1080px) {
   .bg-plate {
     opacity: 0.2;
