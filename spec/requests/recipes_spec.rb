@@ -50,7 +50,7 @@ RSpec.describe 'Recipe', type: :request do
 
       created_recipe = Recipe.last
       expect(created_recipe.name).to eq('New Recipe')
-      expect(created_recipe.cooking_time).to eq 2 
+      expect(created_recipe.cooking_time).to eq 2
       expect(created_recipe.preparation_time).to eq 1
       expect(created_recipe.description).to eq('New recipe description')
       expect(created_recipe.public).to be true
