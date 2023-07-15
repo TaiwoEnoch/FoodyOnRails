@@ -7,7 +7,7 @@
       <p>Total value of food needed: $<%= @missing_foods.sum {|food| food.food.price } %> </p>
     </div>
     <div>
-      <p>Inventory: <%= link_to @recipe.name, recipe_path(@recipe) %></p>
+      <p>recipe: <%= link_to @recipe.name, recipe_path(@recipe) %></p>
       <p>Inventory: <%= link_to @inventory.name, inventory_path(@inventory) %></p>
     </div>
   </div>
