@@ -23,12 +23,13 @@
 				Generate shopping list
 			</button>
   <%= link_to "Back to recipes", recipes_path, class: "btn btn-secondary mx-2" %>
-  <%= button_to "Destroy this recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger mx-2" %>
-  <%= link_to "Add Recipe Food", new_recipe_food_path(@recipe), class: "btn btn-primary mx-2" %>
  <a href= <%= "/recipes/#{@recipe.id}/recipe_foods/new" %>>
   <button class="btn-bg-red-big ">Add Ingredient</button>
 </a>
 </div>
+
+
+
 <div class="d-flex justify-content-between align-items-center mt-3">
 
 			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -53,6 +54,8 @@
 					</div>
 				</div>
 			</div>
+
+ 
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -69,9 +72,8 @@
         <td><%= recipe_food.quantity %></td>
         <td><%= recipe_food.value %></td>
         <td>
-          <%= button_to 'Delete', recipe_recipe_food_path(@recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <%= button_to 'Delete', recipe_recipe_food_path(@recipe, recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
-</table>
