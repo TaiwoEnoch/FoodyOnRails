@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>GameZone</b></h3>
+  <h3><b>Recipe App</b></h3>
 
 </div>
 
@@ -27,11 +27,11 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 [Blog-app] <a name="about-project"></a>
+# 📖 [Recipe-app] <a name="about-project"></a>
 
-> Blog-app is a web application that allows users to create, edit, and delete blog posts. Users can also comment on blog posts and like or dislike them. The application is built with Ruby on Rails
+> Recipe App is a web application that allows users to create and share recipes with other users. Users can create an account, log in, and create, edit, and delete their recipes. Users can also view recipes created by other users.
 
-**[Blog-app]**
+**[Recipe-app]**
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -60,6 +60,14 @@
 <li>Login page</li>
 <li>Signup page</li>
 <li>Use of models</li>
+<li>Add food</li>
+<li>Add recipe</li>
+<li>View recipes</li>
+<li>View foods</li>
+<li>Add inventory</li>
+<li>View inventory</li>
+
+
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -89,7 +97,7 @@ Use Terminal:
 
 cd my-folder
 
-git clone https://github.com/Rishi-Mishra0704/blog-app.git
+git clone https://github.com/Rishi-Mishra0704/Recipe-app.git
 
 ### Install
 
@@ -111,26 +119,29 @@ cd 'project name'
 
 ## 👥 Authors <a name="authors"></a>
 
-## <a> 👤 Abdus Sattar </a>
+## <a> 👤 Taiwo Enoch</a>
 
-- GitHub: [AbdusSattar-70](https://github.com/AbdusSattar-70)
-- Twitter: [Abdus Sattar](https://twitter.com/Abdus_Sattar70)
-- LinkedIn: [Abdus Sattar](https://www.linkedin.com/in/abdus-sattar70/)
+- GitHub: [@TaiwoEnoch](https://github.com/TaiwoEnoch)
+- Twitter: [@taiwoenoch4](https://twitter.com/taiwoenoch4)
+- LinkedIn: [@taiwo01/](https://www.linkedin.com/in/taiwo01/)
 
 ## <a> 👤 Rishi Mishra </a>
 
-- GitHub: [AbdusSattar-70](https://github.com/Rishi-Mishra0704)
-- Twitter: [Abdus Sattar](https://twitter.com/RishiMi31357764)
-- LinkedIn: [Abdus Sattar](https://www.linkedin.com/in/rrmishra/)
+- GitHub: [Rishi Mishra](https://github.com/Rishi-Mishra0704)
+- Twitter: [Rishi Mishra](https://twitter.com/RishiMi31357764)
+- LinkedIn: [Rishi Mishra](https://www.linkedin.com/in/rrmishra/)
+
+## <a> 👤 Karan Jain </a>
+- GitHub: [@karanjain2212](https://github.com/karanjain2212)
+- LinkedIn: [@karanjain2212](https://linkedin.com/in/karanjain2212)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
 <ul>
-  <li>Add Blogs</li>
+  <li>Add better Navigation</li>
   <li>Better UX</li>
-  <li>Api based</li>
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
