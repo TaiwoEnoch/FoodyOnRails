@@ -24,7 +24,7 @@
       <% @missing_foods.each do |food| %>
         <tr>
           <td><%= food.food.name%></td>
-          <td><%= food.quantity%> <%= food.quantity_unit%></td>
+          <td><%= food.measurement_unit%> <%= food.unit_quantity%></td>
           <td><%= food.food.price%></td>
         </tr>
       <% end %>

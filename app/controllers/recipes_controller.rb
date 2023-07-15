@@ -14,6 +14,10 @@ class RecipesController < ApplicationController
     @inventories = Inventory.all
 
     render :show
+    @recipe = Recipe.find(params[:id])
+    @inventories = current_user.inventories
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
+    @recipe_food = RecipeFood.new # Add this line to instantiate a new recipe_food object for the form
   end
 
   # GET /recipes/new
