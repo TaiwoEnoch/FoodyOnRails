@@ -3,14 +3,19 @@
 <% @recipes.each do |recipe| %>
   <div class="public-container card">
     <div class="card-body">
-      <div class="recipe_name">
-        <h3 class="card-title"><%= link_to recipe.name, recipe_path(recipe) %></h3>
-        <p>By: <%= recipe.user&.name %></p>
-      </div>
-      <div>
-        <p class="card-text">Total food items: <%= recipe.recipe_foods.size %></p>
-        <% total_price = recipe.recipe_foods.joins(:food).sum('recipe_foods.quantity * foods.price') %>
-        <p class="card-text">Total Price: <%= number_to_currency(total_price) %></p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="recipe-info">
+            <h3 class="card-title"><%= link_to recipe.name, recipe_path(recipe) %></h3>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="recipe-details text-md-end">
+            <p class="card-text">Total food items: <%= recipe.recipe_foods.size %></p>
+            <% total_price = recipe.recipe_foods.joins(:food).sum('recipe_foods.quantity * foods.price') %>
+            <p class="card-text">Total Price: <%= number_to_currency(total_price) %></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
