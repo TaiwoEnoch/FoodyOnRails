@@ -13,6 +13,6 @@ class RecipeFood < ApplicationRecord
   private
 
   def set_food_from_name
-    self.food = Food.find_by(name: food_name)
+    self.food = Food.find_or_create_by(name: food_name)
   end
 end

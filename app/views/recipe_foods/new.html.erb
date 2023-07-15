@@ -1,5 +1,6 @@
 <section class="newFood">
-<%= form_with model: @recipe_food, url: recipe_recipe_foods_path(@recipe) do |form| %>
+<%= form_with model: @recipe_food, url: recipe_recipe_foods_path(@recipe), local: true do |form| %>
+
   <div class="fieldInput">
     <%= form.label :food_name, "Food Name" %>
     <%= form.text_field :food_name %>
@@ -21,3 +22,7 @@
   </div>
 <% end %>
 <section>
+
+
+
+
