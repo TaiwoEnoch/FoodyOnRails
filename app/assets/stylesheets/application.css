@@ -13,9 +13,9 @@
  *= require_tree .
  *= require_self
  */
- 
+
 .custom-button-width {
-  width: 100px; 
+  width: 100px;
 }
 
 .navbar {
