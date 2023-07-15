@@ -97,7 +97,7 @@ Use Terminal:
 
 cd my-folder
 
-git clone https://github.com/Rishi-Mishra0704/Recipe-app.git
+git clone (https://github.com/TaiwoEnoch/FoodyOnRails.git)
 
 ### Install
 
