@@ -83,6 +83,12 @@ class RecipesController < ApplicationController
     render :shopping_list
   end
 
+  def toggle
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to @recipe, notice: 'Recipe public status updated.'
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
