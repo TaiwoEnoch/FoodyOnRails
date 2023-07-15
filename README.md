@@ -150,7 +150,7 @@ cd 'project name'
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/)
+Feel free to check the [issues page](https://github.com/TaiwoEnoch/FoodyOnRails/issues)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -162,7 +162,7 @@ Please give a ⭐️ if you like this project
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for this opportunity that they gave us to build this amazing project.
+I would like to thank Microverse for the opportunity that they gave us to build this amazing project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
