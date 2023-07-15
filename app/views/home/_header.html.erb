@@ -18,9 +18,15 @@
           </li>
 
 <% if user_signed_in? %>
+  <% if current_page?(recipes_path) %>
+  <li class="nav-item">
+    <%= link_to "Create New Recipe", new_recipe_path, class: "nav-link" %>
+  </li>
+  <% else %>
   <li class="nav-item">
     <%= link_to "Recipes",  recipes_path, class: "nav-link" %>
   </li>
+  <% end %>
     <% if current_page?(inventories_path)  %>
              <li class="nav-item">
               <%= link_to "Create New Inventory", new_inventory_path, class: "nav-link" %>
