@@ -23,7 +23,7 @@
 <% @missing_foods.each do |food| %>
   <tr>
     <td><%= food.name %></td>
-    <td><%= food.unit_quantity %></td>
+    <td><%= food.inventory_foods.first.quantity %></td>
     <td>$<%= food.price %></td>
   </tr>
 <% end %>
