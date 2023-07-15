@@ -243,6 +243,7 @@ body {
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
+
   /* background-image: url("heading_left.png"); */
 }
 
@@ -256,6 +257,7 @@ body {
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
+
   /* background-image: url("heading_right.png"); */
 }
 
