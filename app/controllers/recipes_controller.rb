@@ -8,7 +8,13 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @recipe = Recipe.includes(recipe_foods: :food).find(params[:id])
+    @recipe_id = @recipe.id
+    @inventories = Inventory.all
+
+    render :show
+  end
 
   # GET /recipes/new
   def new
@@ -55,6 +61,17 @@ class RecipesController < ApplicationController
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def shopping_list
+    @recipe_id = params[:recipe_id]
+    @inventory_id = params[:inventory_id]
+
+    @recipe = Recipe.includes(recipe_foods: :food).find(@recipe_id)
+    @inventory = Inventory.find(@inventory_id)
+
+    inventory_foods_id = @inventory.foods.pluck(:id)
+    @missing_foods = @recipe.recipe_foods.reject { |food_recipe| inventory_foods_id.include?(food_recipe.food_id) }
   end
 
   private
