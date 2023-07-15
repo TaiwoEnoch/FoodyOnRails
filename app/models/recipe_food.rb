@@ -3,8 +3,6 @@ class RecipeFood < ApplicationRecord
   belongs_to :food
 
   validates :quantity, presence: true, numericality: { greater_or_equal_to: 0 }
-
-  # recipe_food should include (foods, recipes)
   def value
     return 'no food error' unless food
 
