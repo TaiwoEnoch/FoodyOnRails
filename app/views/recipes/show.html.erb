@@ -8,12 +8,27 @@
       <p class="fs-3">Cooking time: <%= @recipe.cooking_time %>mins</p>
       <p class="fs-3"> Description: <%= @recipe.description %></p>
     </div>
-    <div class="form-check form-switch">
-      <div class="d-flex align-items-center">
-        <label class="form-check-label me-3 fs-3" for="toggle-btn">Public:</label>
-        <%= check_box_tag 'recipe[public]', 1, @recipe.public, class: 'form-check-input fs-3 ms-1', id: 'toggle-btn' %>
+	<div>
+
+
+  
+  <% if can?(:update, @recipe) %>
+    <%= form_with(model: @recipe, url: toggle_recipe_path(@recipe), method: :patch, local: true) do |form| %>
+      <div class="toggle-switch-container">
+        <span>Private</span>
+        <label class="toggle-switch">
+          <%= form.check_box :public, { checked: @recipe.public, class: 'toggle-switch-input', onchange: 'this.form.submit()' } %>
+          <span class="toggle-switch-slider"></span>
+        </label>
+        <span>Public</span>
       </div>
-    </div>
+      <%= form.submit '', class: 'toggle-switch-submit' %>
+    <% end %>
+  <% end %>
+</div>
+
+
+
   </div>
 </div>
 
