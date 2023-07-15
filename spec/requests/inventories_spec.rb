@@ -72,7 +72,6 @@ RSpec.describe 'Inventory', type: :request do
     end
   end
 
-
   describe 'DELETE /inventories/:id' do
     let!(:inventory) do
       Inventory.create(user: @user, name: 'test recipe', description: 'test description')
