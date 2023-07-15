@@ -70,19 +70,19 @@ class RecipesController < ApplicationController
   def shopping_list
     @recipe_id = params[:recipe_id]
     @inventory_id = params[:inventory_id]
-  
+
     @recipe = Recipe.includes(recipe_foods: :food).find(@recipe_id)
     @inventory = Inventory.find(@inventory_id)
-  
+
     recipe_foods_ids = @recipe.recipe_foods.pluck(:food_id)
     @missing_foods = @inventory.foods.reject { |food| recipe_foods_ids.include?(food.id) }
-  
+
     @total_missing_items = @missing_foods.count
-    @total_missing_price = @missing_foods.sum { |food| food.price }
-  
+    @total_missing_price = @missing_foods.sum(&:price)
+
     render :shopping_list
   end
-  
+
 
   private
 
