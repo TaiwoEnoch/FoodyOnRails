@@ -83,7 +83,6 @@ class RecipesController < ApplicationController
     render :shopping_list
   end
 
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
