@@ -129,7 +129,7 @@ cd 'project name'
 
 - GitHub: [Rishi Mishra](https://github.com/Rishi-Mishra0704)
 - Twitter: [Rishi Mishra](https://twitter.com/RishiMi31357764)
-- LinkedIn: [Rishi Mishra](https://www.linkedin.com/in/rrmishra/)
+- Linkedln: [Rishi Mishra](https://www.linkedin.com/in/rrmishra/)
 
 ## <a> 👤 Karan Jain </a>
 - GitHub: [@karanjain2212](https://github.com/karanjain2212)
